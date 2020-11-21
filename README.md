@@ -8,5 +8,5 @@
 <i>virtual-environment-name\Scripts\activate</i><br><br>
 4. Install the dependencies and packages using requirements.txt file.<br>
 <i>pip install -r requirements.txt</i><br><br>
-5. Run main.py file.<br>
-<i>python main.py</i>
+5. Run run.py file.<br>
+<i>python run.py</i>

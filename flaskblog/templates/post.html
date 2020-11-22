@@ -6,7 +6,11 @@
   />
   <div class="media-body">
     <div class="article-metadata">
-      <a href="#" class="mr-2">{{post.author.username}}</a>
+      <a
+        href="{{ url_for('user_posts', username=post.author.username) }}"
+        class="mr-2"
+        >{{post.author.username}}</a
+      >
       <small class="test-muted"
         >{{post.date_posted.strftime('%d-%m-%Y')}}</small
       >

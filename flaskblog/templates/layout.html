@@ -39,19 +39,19 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a href="{{url_for('home')}}" class="nav-item nav-link">HOME</a>
-              <a href="{{url_for('about')}}" class="nav-item nav-link">ABOUT</a>
+              <a href="{{url_for('main.home')}}" class="nav-item nav-link">HOME</a>
+              <a href="{{url_for('main.about')}}" class="nav-item nav-link">ABOUT</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if current_user.is_authenticated %} 
-              <a href="{{url_for('new_post')}}" class="nav-item nav-link">+ POST</a>
-              <a href="{{url_for('account')}}" class="nav-item nav-link">ACCOUNT</a>
-              <a href="{{url_for('logout')}}" class="nav-item nav-link">LOGOUT</a>
+              <a href="{{url_for('posts.new_post')}}" class="nav-item nav-link">+ POST</a>
+              <a href="{{url_for('users.account')}}" class="nav-item nav-link">ACCOUNT</a>
+              <a href="{{url_for('users.logout')}}" class="nav-item nav-link">LOGOUT</a>
 
               {% else %}
-              <a href="{{url_for('login')}}" class="nav-item nav-link">LOGIN</a>
-              <a href="{{url_for('register')}}" class="nav-item nav-link">REGISTER</a>
+              <a href="{{url_for('users.login')}}" class="nav-item nav-link">LOGIN</a>
+              <a href="{{url_for('users.register')}}" class="nav-item nav-link">REGISTER</a>
               {% endif %}
             </div>
           </div>

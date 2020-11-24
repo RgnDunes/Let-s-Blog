@@ -7,7 +7,7 @@
   <div class="media-body">
     <div class="article-metadata">
       <a
-        href="{{ url_for('user_posts', username=post.author.username) }}"
+        href="{{ url_for('users.user_posts', username=post.author.username) }}"
         class="mr-2"
         >{{post.author.username}}</a
       >
@@ -16,7 +16,9 @@
       >
     </div>
     <h2>
-      <a href="{{ url_for('post', post_id=post.id) }}" class="article-title"
+      <a
+        href="{{ url_for('posts.post', post_id=post.id) }}"
+        class="article-title"
         >{{post.title}}</a
       >
     </h2>
@@ -26,11 +28,13 @@
 {% endfor %} {% for page_num in posts.iter_pages(left_edge=1, right_edge=1,
 left_current=1, right_current=2) %} {% if page_num %} {% if posts.page ==
 page_num %}
-<a class="btn btn-info mb-4" href="{{ url_for('home', page=page_num) }}"
+<a class="btn btn-info mb-4" href="{{ url_for('main.home', page=page_num) }}"
   >{{ page_num }}</a
 >
 {% else %}
-<a class="btn btn-outline-info mb-4" href="{{ url_for('home', page=page_num) }}"
+<a
+  class="btn btn-outline-info mb-4"
+  href="{{ url_for('main.home', page=page_num) }}"
   >{{ page_num }}</a
 >
 {% endif %} {% else %} ... {% endif %} {% endfor %} {% endblock content %}

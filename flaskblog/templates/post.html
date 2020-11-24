@@ -7,7 +7,7 @@
   <div class="media-body">
     <div class="article-metadata">
       <a
-        href="{{ url_for('user_posts', username=post.author.username) }}"
+        href="{{ url_for('users.user_posts', username=post.author.username) }}"
         class="mr-2"
         >{{post.author.username}}</a
       >
@@ -17,7 +17,7 @@
       {% if post.author == current_user %}
       <div>
         <a
-          href="{{ url_for('update_post', post_id=post.id) }}"
+          href="{{ url_for('posts.update_post', post_id=post.id) }}"
           class="btn btn-primary btn-sm mt-1 mb-1"
           >Update</a
         >
@@ -63,7 +63,7 @@
           Close
         </button>
         <form
-          action="{{url_for('delete_post', post_id=post.id) }}"
+          action="{{url_for('posts.delete_post', post_id=post.id) }}"
           method="POST"
         >
           <input class="btn btn-danger" type="submit" value="Delete" />

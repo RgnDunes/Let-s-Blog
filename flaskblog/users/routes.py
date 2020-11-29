@@ -96,3 +96,21 @@ def reset_token(token):
         flash('Password Changed Successfully.','success')
         return redirect(url_for('users.login'))
     return render_template('reset_token.html', title='Reset Password', form=form)
+
+
+# here
+@users.route("/user/account/delete", methods=['POST', 'GET'])
+@login_required
+def delete_user():
+    user = User.query.filter_by(username=current_user.username).first_or_404()
+    posts = Post.query.filter_by(author=user)
+    for post in posts:
+        indiv = Post.query.filter_by(id=post.id).first()
+        db.session.delete(indiv)
+        db.session.commit()
+    if user != current_user:
+        abort(403)
+    db.session.delete(user)
+    db.session.commit()
+    flash('Account Deleted Successfully.','success')
+    return redirect(url_for('main.home'))

@@ -6,6 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <link rel="icon" href="{{url_for('static',filename='developer/Logo.png')}}" type="image/gif">
 
     <!-- Bootstrap CSS -->
     <link
@@ -14,6 +15,12 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='main.css')}}">  
 
@@ -26,7 +33,7 @@
   <body>
     <!-- NAVIGATION BAR STARTS -->
     <header class="site-header">
-      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+      <nav class="navbar navbar-expand-md navbar-dark bg-info fixed-top">
         <div class="container">
           <a href="/" class="navbar-brand mr-4">Let's Blog</a>
           <button
@@ -77,13 +84,13 @@
         </div>
         <div class="col-md-4">
           <div class="content-section">
-            <h3>Our Sidebar</h3>
-            <p class="text-muted">You can put any information here you'd like.
+            <h3>Developer's Info</h3>
+            <p class="text-muted">
               <ul>
-                <li>Latest Posts</li>
-                <li>Announcements</li>
-                <li>Calendars</li>
-                <li>etc</li>
+                <br><a href="{{url_for('static',filename='developer/Resume.pdf')}}" download><button class="btn btn-success"><i class="fa fa-download" aria-hidden="true"></i> Resume</button></a></br>
+                <br><a href="https://github.com/RgnDunes"><button class="btn btn-dark"><i class="fa fa-github" aria-hidden="true"></i> Github</button></a></br>
+                <br><a href="https://www.linkedin.com/in/divyansh-singh-8137201a2/"><button class="btn btn-primary"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</button></a></br>
+                <br><a href="mailto:singh.divyansh1802@gmail.com"><button class="btn btn-info"><i class="fa fa-envelope" aria-hidden="true"></i> Mail me</button></a></br>
               </ul>
             </p>
           </div>

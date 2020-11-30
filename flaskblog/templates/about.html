@@ -1,3 +1,17 @@
 {% extends "layout.html" %} {% block content %}
-<h1>About Page</h1>
+<div class="content-section">
+  <h1 align="right">Developer</h1>
+  <img
+    class="rounded-circle"
+    src="{{url_for('static',filename='developer/developer.jpeg')}}"
+    width="170px"
+    height="200px"
+  ></img>
+  <p>
+    Hey guys, I'm the developer <i>(karta-dharta)</i> of this blog website. I
+    made this website to just showcase my flask skills I recently learned and to
+    showcase all of my articles and blogs I've published till date.
+  </p>
+</div>
+
 {% endblock content %}
